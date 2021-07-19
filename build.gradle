@@ -1,3 +1,9 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+}
+
 plugins {
 	id 'java'
 	id 'eclipse'
@@ -7,9 +13,13 @@ plugins {
 	id 'net.minecrell.licenser' version '0.4.1'
 	id "org.ajoberstar.grgit" version "3.1.1"
 	id 'com.jfrog.bintray' version '1.8.4'
+	id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 
 def ENV = System.getenv()
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 class Globals {
 	static def baseVersion = "0.11.0"
@@ -45,6 +55,9 @@ def getBranch() {
 }
 
 allprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
 	apply plugin: 'checkstyle'
 	apply plugin: 'maven-publish'
 	apply plugin: 'fabric-loom'
@@ -56,7 +69,7 @@ allprojects {
 	group = "net.patchworkmc.patchwork-api"
 
 	loom {
-		shareCaches = true
+		shareCaches	 = true
 	}
 
 	repositories {
@@ -254,3 +267,10 @@ task copyIdeaFiles(type: Copy) {
 }
 
 copyIdeaFiles
+
+apply plugin: 'java'
+
+shadowJar {
+	classifier = 'all'
+	configurations = [project.configurations.compile]
+}
