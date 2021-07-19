@@ -1,6 +1,36 @@
-# THIS IS NO LONGER BEING MAINTAINED, A REPLACEMENT IS BEING DEVELOPED BEHIND THE SCENES
+# Personal project to bring Create mod to the Fabric experience
 
 A best-effort reimplementation of the Minecraft Forge API.
+
+## Todo
+[ ] Add forge models (net.minecraftforge.client.model)
+[ ] *Optional* Add forge common mod annotation which silently calls (invisible class which relays as a port?)
+[ ] Rework the repository and get a bintray back and operational
+[ ] Implement BiomeLoadingEvent
+[ ] Implement EntityPlaceEvent
+[ ] Implement PlayerEvent? (or reimplement, I remember seeing it)
+[ ] Re-implement BlockEvent
+[ ] Implement SubscribeEvent
+[ ] Implement EventBusSubscriber
+[ ] Implement AddReloadListenerEvent
+[ ] Implement RegisterCommandsEvent
+[ ] Implement EntityJoinWorldEvent
+[ ] Implement AttackEntityEvent
+[ ] Implement FluidPlaceBlockEvent
+[ ] Implement ClickInputEvent
+[ ] Implement ClientPlayerNetworkEvent
+[ ] Implement EntityViewRenderEvent
+[ ] Implement RenderGameOverlayEvent
+[ ] Implement RenderTooltipEvent
+[ ] Implement ParticleFactoryRegisterEvent
+[ ] Implement distmarker.OnlyIn
+[ ] Implement ModelBakeEvent
+[ ] Implement ModelRegistryEvent
+[ ] Implement model.ModelLoader
+[ ] Implement ForgeHooksClient
+[ ] Implement fluids.*
+
+
 
 ## Here be dragons
 Patchwork only runs a small amount of mods. It is not yet ready for general use--we are only looking for developers. Testers and users aren't needed or desired at this time.
